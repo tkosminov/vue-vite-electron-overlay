@@ -176,12 +176,12 @@ async function toggleIgnoreMouseEventOverlay() {
     if (is_interactible) {
       window.setIgnoreMouseEvents(true, { forward: true })
 
-      ipcMain.emit('overlay-window-blur')
+      window.webContents.send('overlay-window-blur')
     } else {
       window.setIgnoreMouseEvents(false)
       window.focus()
 
-      ipcMain.emit('overlay-window-focus')
+      window.webContents.send('overlay-window-focus')
     }
 
     is_interactible = !is_interactible
