@@ -3,13 +3,15 @@
   <div class="content-block">
     <div class="content">
       <span>Vite vue overlay</span>
-      <br /><span><b>Alt + Q</b> to toggle overlay display</span> <br /><span><b>Alt + A</b> to toggle setIgnoreMouseEvents</span>
+      <br /><span><b>Alt + Q</b> to toggle overlay display</span> <br /><span><b>Alt + A</b> to toggle setIgnoreMouseEvents</span> <br />
+      <CVersions />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { reactive } from 'vue'
+import CVersions from '@renderer/components/Versions.vue'
 
 const ipcRenderer = reactive({ ...window.electron.ipcRenderer })
 
